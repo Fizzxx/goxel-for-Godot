@@ -399,8 +399,8 @@ void goxel_reset(void)
                   goxel.painter.symmetry_origin);
 
     goxel.rend.light = (typeof(goxel.rend.light)) {
-        .pitch = 20 * DD2R,
-        .yaw = 120 * DD2R,
+        .pitch = -70 * DD2R,
+        .yaw = 10 * DD2R,
         .intensity = 2.0,
     };
     goxel.rend.settings = (render_settings_t) {
@@ -1517,10 +1517,10 @@ static void a_view_default(void)
 {
     camera_t *camera = get_camera();
     mat4_set_identity(camera->mat);
-    camera->dist = 128;
+    camera->dist = 162;
     camera->aspect = 1;
-    mat4_itranslate(camera->mat, 0, 0, camera->dist);
-    camera_turntable(camera, M_PI / 4, M_PI / 4);
+    mat4_itranslate(camera->mat, 16, -16, camera->dist);
+    camera_turntable(camera, 7 * M_PI / 4, 11 * M_PI / 6);
     camera_fit_box(camera, goxel.image->box);
 }
 
@@ -1544,21 +1544,21 @@ static void a_view_toggle_ortho(void)
 ACTION_REGISTER(view_left,
     .flags = ACTION_CAN_EDIT_SHORTCUT,
     .cfunc_data = a_view_set,
-    .data = (float[]){90, 90},
+    .data = (float[]){180, 0},
     .default_shortcut = "Ctrl 3",
 )
 
 ACTION_REGISTER(view_right,
     .flags = ACTION_CAN_EDIT_SHORTCUT,
     .cfunc_data = a_view_set,
-    .data = (float[]){-90, 90},
+    .data = (float[]){0, 0},
     .default_shortcut = "3",
 )
 
 ACTION_REGISTER(view_top,
     .flags = ACTION_CAN_EDIT_SHORTCUT,
     .cfunc_data = a_view_set,
-    .data = (float[]){0, 0},
+    .data = (float[]){-90, -90},
     .default_shortcut = "7",
 )
 
@@ -1571,7 +1571,7 @@ ACTION_REGISTER(view_default,
 ACTION_REGISTER(view_front,
     .flags = ACTION_CAN_EDIT_SHORTCUT,
     .cfunc_data = a_view_set,
-    .data = (float[]){0, 90},
+    .data = (float[]){-90, 0},
     .default_shortcut = "1",
 )
 

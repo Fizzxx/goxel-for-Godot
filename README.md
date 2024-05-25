@@ -1,3 +1,15 @@
+Goxel for Godot
+=====
+
+This fork introduces a couple minor changes to the latest version of Goxel that makes designing and importing into Godot a bit more straightforward.
+Changes made:
+- The camera orientation has been changed in order to allow for working in the same Y-up -Z-forward convention that Godot uses.
+- The default origin for the workspace volume was relocated to the center of the cube, making it more ideal for creating tiles for GridMap nodes
+
+Other Notes and Recommendations:
+- When adjusting the import settings for .gltf files in Godot, set the "Root Scale" to 0.0625 so that the objects better align with the default gridlines and GridMap cell dimensions
+
+Please feel free to reach out with any suggestions to make this lovely tool more useful for Godot creators!
 
 Goxel
 =====

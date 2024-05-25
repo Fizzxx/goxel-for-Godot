@@ -36,9 +36,9 @@
 
 // Flags for the iterator/accessor status.
 enum {
-    VOLUME_ITER_FINISHED                  = 1 << 9,
+    VOLUME_ITER_FINISHED                  = 1 <<  9,
     VOLUME_ITER_BOX                       = 1 << 10,
-    VOLUME_ITER_VOLUME2                     = 1 << 11,
+    VOLUME_ITER_VOLUME2                   = 1 << 11,
 };
 
 typedef struct tile_data tile_data_t;

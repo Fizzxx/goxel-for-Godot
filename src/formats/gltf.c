@@ -410,11 +410,11 @@ static void gltf_export(const image_t *img, const char *path,
     }
 
     root_node = add_item(g.data, nodes);
-    mat4_set((void*)root_node->matrix,
-             1, 0,  0, 0,
-             0, 0, -1, 0,
-             0, 1,  0, 0,
-             0, 0,  0, 1);
+    mat4_set((void*)root_node->matrix,  // The original rotation is no longer needed
+             1,  0,  0,  0,
+             0,  1,  0,  0,
+             0,  0,  1,  0,
+             0,  0,  0,  1);
     root_node->has_matrix = true;
     scene = add_item(g.data, scenes);
     ALLOC(scene->nodes, 1);

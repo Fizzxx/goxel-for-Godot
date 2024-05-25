@@ -307,10 +307,6 @@ static const string_t STRINGS[] = {
         .en = "Fixed",
         .fr = "Fixe",
     },
-    [STR_FLIP] = {
-        .en = "Flip",
-        .fr = "Inverser",
-    },
     [STR_FLOOR] = {
         .en = "Floor",
         .fr = "Plancher",
@@ -354,10 +350,6 @@ static const string_t STRINGS[] = {
     [STR_LASER] = {
         .en = "Laser",
         .fr = "Laser",
-    },
-    [STR_LAYER] = {
-        .en = "Layer",
-        .fr = "Calque",
     },
     [STR_LAYERS] = {
         .en = "Layers",
@@ -463,10 +455,6 @@ static const string_t STRINGS[] = {
         .en = "Plane",
         .fr = "Plan",
     },
-    [STR_POSITION] = {
-        .en = "Position",
-        .fr = "Position",
-    },
     [STR_QUIT] = {
         .en = "Quit",
         .fr = "Quitter",
@@ -478,10 +466,6 @@ static const string_t STRINGS[] = {
     [STR_RENDER] = {
         .en = "Render",
         .fr = "Rendu",
-    },
-    [STR_RECENTER] = {
-        .en = "Recenter",
-        .fr = "Recentrer",
     },
     [STR_RECT_SELECT] = {
         .en = "Rectangle Select",
@@ -526,10 +510,6 @@ static const string_t STRINGS[] = {
     [STR_SAVE_COLORS_AS_VERTEX_ATTRIBUTE] = {
         .en = "Save colors as vertex attribute",
         .fr = "Enregistrer les couleurs en tant qu'attribut de sommet",
-    },
-    [STR_SCALE] = {
-        .en = "Scale",
-        .fr = "Redimensionner",
     },
     [STR_SELECT_BY_COLOR] = {
         .en = "Select by Color",

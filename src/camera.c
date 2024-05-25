@@ -26,10 +26,12 @@ camera_t *camera_new(const char *name)
     if (name)
         strncpy(cam->name, name, sizeof(cam->name) - 1);
     mat4_set_identity(cam->mat);
-    cam->dist = 128;
+    // The changes below were to simply adjust initial viewing angle/distance
+    //  in accordance with the altered camera controls/orientation
+    cam->dist = 162;
     cam->aspect = 1;
-    mat4_itranslate(cam->mat, 0, 0, cam->dist);
-    camera_turntable(cam, M_PI / 4, M_PI / 4);
+    mat4_itranslate(cam->mat, 16, -16, cam->dist);
+    camera_turntable(cam, 7 * M_PI / 4, 11 * M_PI / 6);
     return cam;
 }
 
@@ -177,7 +179,7 @@ void camera_turntable(camera_t *camera, float rz, float rx)
 
     mat4_mul_vec3(camera->mat, VEC(0, 0, -camera->dist), center);
     mat4_itranslate(mat, center[0], center[1], center[2]);
-    mat4_irotate(mat, rz, 0, 0, 1);
+    mat4_irotate(mat, rz, 0, 1, 0);  // axis of rotation moved to the y-axis (*need to rename args for readability*)
     mat4_itranslate(mat, -center[0], -center[1], -center[2]);
     mat4_imul(mat, camera->mat);
     mat4_copy(mat, camera->mat);
